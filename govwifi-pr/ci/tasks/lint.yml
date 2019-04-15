@@ -3,6 +3,7 @@ platform: linux
 
 inputs:
   - name: src
+  # - name: docker-cache/<% image name %>-image
 
 params:
   ON_CONCOURSE: true

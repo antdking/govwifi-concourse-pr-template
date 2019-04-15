@@ -6,8 +6,10 @@ source /docker-helpers.sh
 start_docker
 
 function load_layers() {
-  
-  [[ ! -d 'docker-cache' ]] && return 0
+
+  # don't do anything if we don't have cache
+  [[ ! -d 'docker-cache' ]] && return 0;
+  [[ -z "$(ls docker-cache)" ]] && return 0;
 
   echo "loading docker layer cache"
   pids=
